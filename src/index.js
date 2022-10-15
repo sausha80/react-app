@@ -42,7 +42,7 @@ class ProductTable extends React.Component {
         let lastCategory = null;
 
         this.props.products.forEach((product) => {
-            if(product.name.indexOf(filterText) === -1){
+            if(product.name.toUpperCase().indexOf(filterText.toUpperCase()) === -1){
                 return;
             }
             if(inStockOnly && !product.stocked){
@@ -159,6 +159,7 @@ const PRODUCTS = [
     {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
     {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
     {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
+    {category: 'Sporting Goods', price: '$129.99', stocked: true, name: 'Cricket Bat'},
     {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
     {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
     {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'},
